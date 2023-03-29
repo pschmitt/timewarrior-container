@@ -47,7 +47,7 @@ jobs:
             ${{ env.image_name }}
             ghcr.io/${{ env.image_name }}
 
-      - name: Build and puh
+      - name: Build and push
         uses: docker/build-push-action@v4
         with:
           context: .
