@@ -17,7 +17,7 @@ FROM alpine:3.17
 RUN echo "@testing https://dl-cdn.alpinelinux.org/alpine/edge/testing" >> \
       /etc/apk/repositories && \
     apk add --no-cache task timewarrior@testing && \
-    apk add --no-cache --virtual builddeps git py3-pip py3-cffi && \
+    apk add --no-cache --virtual builddeps git py3-pip py3-wheel py3-cffi && \
     pip install --no-cache-dir git+https://github.com/ralphbean/bugwarrior jira keyring && \
     pip install --no-cache-dir timewsync && \
     adduser user01 -u 1000 -D
