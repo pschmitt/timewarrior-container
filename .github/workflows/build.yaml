@@ -42,7 +42,7 @@ jobs:
         with:
           images: |
             ${{ env.image_name }}
-            ghcr.io/${{ env.image_name }}
+            ghcr.io/${{ github.repository }}
 
       - name: Build and push
         uses: docker/build-push-action@v4
