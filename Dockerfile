@@ -20,8 +20,13 @@ RUN echo "@testing https://dl-cdn.alpinelinux.org/alpine/edge/testing" >> \
     apk add --no-cache --virtual builddeps git py3-pip py3-wheel py3-cffi && \
     pip install --no-cache-dir git+https://github.com/ralphbean/bugwarrior jira keyring && \
     pip install --no-cache-dir timewsync && \
-    adduser user01 -u 1000 -D
+    adduser user01 -u 1000 -D && \
+    mkdir -p /config /data && \
+    chown -R user01 /config /data
 
 COPY --from=jirapush /tmp/timewarrior-jirapush/target/release/jirapush /usr/local/bin/jirapush
 
 USER user01
+
+VOLUME ["/config", "/data"]
+WORKDIR /data
