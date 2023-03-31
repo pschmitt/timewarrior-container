@@ -32,7 +32,7 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
         with:
-          platforms: 'amd64,arm64,arm'
+          platforms: ${{ env.platforms }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
