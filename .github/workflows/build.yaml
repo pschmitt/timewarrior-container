@@ -47,6 +47,9 @@ jobs:
           images: |
             ${{ env.image_name }}
             ghcr.io/${{ env.image_name }}
+          tags: |
+            # set latest tag for default branch
+            type=raw,value=latest,enable={{is_default_branch}}
 
       - name: Build and push
         uses: docker/build-push-action@v4
