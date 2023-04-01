@@ -3,7 +3,7 @@ name: Build
 on:
   push:
   schedule:
-    - cron:  '* 17 * * *'
+    - cron:  '9 17 * * *'
   workflow_dispatch:
 
 jobs:

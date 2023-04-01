@@ -1,0 +1,14 @@
+include:
+  - project: alm/release-process/release-process
+    ref: v0.12.2
+    file:
+      - pipelines/container-image.yml
+
+variables:
+  FORCE_MASTER_VERSION_BUMPS: 'true'
+
+docker-build:
+  variables:
+    EXTRA_ARGS: |
+      --build-arg=ARTIFACTORY_USER=$DEPLOY_USER
+      --build-arg=ARTIFACTORY_PASSWORD=$DEPLOY_PASSWORD
