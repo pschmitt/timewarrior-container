@@ -12,7 +12,7 @@ RUN apk add --no-cache git musl-dev openssl-dev && \
   cd /tmp/timewarrior-jirapush && \
   cargo build --release
 
-FROM alpine:3.18
+FROM alpine:3.19
 
 RUN echo "@testing https://dl-cdn.alpinelinux.org/alpine/edge/testing" >> \
       /etc/apk/repositories && \
